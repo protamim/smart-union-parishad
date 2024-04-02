@@ -4,7 +4,7 @@ import Navbar from "../shared/Navbar";
 
 const RootLayout = () => {
   return (
-    <>
+    <div className="max-w-6xl mx-auto px-4">
       <nav>
         <Navbar />
       </nav>
@@ -14,7 +14,7 @@ const RootLayout = () => {
       <footer>
         <Footer />
       </footer>
-    </>
+    </div>
   );
 };
 
