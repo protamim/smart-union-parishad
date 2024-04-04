@@ -171,7 +171,7 @@ const Navbar = () => {
                         <MdKeyboardArrowDown />
                       </span>
 
-                      <ul className="absolute left-0 top-[120%] bg-primary-color shadow-xl shadow-violet-300 px-4 pt-6 pb-4 transition-all ease-in-out duration-300 origin-top scale-y-0 group-hover:scale-y-100 group-hover:top-[130%] space-y-4">
+                      <ul className="absolute left-0 top-[120%] bg-primary-color shadow-xl shadow-violet-300 px-4 pt-6 pb-4 transition-all ease-in-out duration-300 origin-top scale-y-0 group-hover:scale-y-100 group-hover:top-[130%] space-y-4 z-[99]">
                         {item?.DROPDOWN?.map((subItem) => (
                           <li key={subItem.id}>
                             <NavLink

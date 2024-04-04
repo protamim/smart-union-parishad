@@ -1,4 +1,4 @@
-import HomePage from "../pages/HomePage";
+import { Outlet } from "react-router-dom";
 import Footer from "../shared/Footer";
 import Navbar from "../shared/Navbar";
 
@@ -9,7 +9,7 @@ const RootLayout = () => {
         <Navbar />
       </nav>
       <main>
-        <HomePage />
+        <Outlet />
       </main>
       <footer>
         <Footer />
