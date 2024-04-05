@@ -1,6 +1,32 @@
 import Marquee from "react-fast-marquee";
-import { homeSlider1, homeSlider2, homeSlider3 } from "../assets";
+import {
+  homeSlider1,
+  homeSlider2,
+  homeSlider3,
+  sheba1,
+  sheba10,
+  sheba11,
+  sheba12,
+  sheba13,
+  sheba14,
+  sheba2,
+  sheba3,
+  sheba4,
+  sheba5,
+  sheba6,
+  sheba7,
+  sheba8,
+  sheba9,
+} from "../assets";
 import Carousel from "../components/ui/Carousel";
+import HighlightTitle from "../components/ui/HighlightTitle";
+import HomeNotice from "../components/ui/HomeNotice";
+import HomeParishadAbout from "../components/ui/HomeParishadAbout";
+import Table, { TData, THeading, TRow } from "../components/ui/Table";
+import PdfDownload from "../components/ui/PdfDownload";
+import { circular } from "../../public";
+import { FaRegFilePdf } from "react-icons/fa";
+import ShebaCard from "../components/ui/ShebaCard";
 
 const Welcome = () => {
   return (
@@ -63,30 +89,87 @@ const HomeCarouselData = [
   },
 ];
 
+const SHEBA = [
+  { id: 1, title: "Development Project", image: `${sheba1}` },
+  { id: 2, title: "Budget", image: `${sheba2}` },
+  { id: 3, title: "APP", image: `${sheba3}` },
+  { id: 4, title: "Holding Tax", image: `${sheba4}` },
+  { id: 5, title: "Health", image: `${sheba5}` },
+  { id: 6, title: "Town Planning", image: `${sheba6}` },
+  { id: 7, title: "Electrical", image: `${sheba7}` },
+  { id: 8, title: "Conservancy", image: `${sheba8}` },
+  { id: 9, title: "Water Supply", image: `${sheba9}` },
+  { id: 10, title: "Mechanical", image: `${sheba10}` },
+  { id: 11, title: "E-GP", image: `${sheba11}` },
+  { id: 12, title: "Trade License", image: `${sheba12}` },
+  { id: 13, title: "Birth verify", image: `${sheba13}` },
+  { id: 14, title: "COV-19 Vaccine", image: `${sheba14}` },
+];
+
 const HomeMainContent = () => {
   return (
     <>
-      <Carousel data={HomeCarouselData} >
-        {/* <CarouselContainer className="h-[25rem]">
-          {HomeCarouselData.map((item) => (
-            <Slide key={item.id} className="relative h-full">
-              <img
-                src={item.photo}
-                alt={item.title}
-                className="absolute w-full h-full top-0 left-0"
+      <div className="mb-6">
+        <Carousel data={HomeCarouselData} />
+      </div>
+      {/* Porishad Overview */}
+      <div className="space-y-5 mb-8">
+        <HighlightTitle
+          path="#"
+          text="ইউনিয়নের বার্ষিক ক্রয় পরিকল্পনা ২০২২-২০২৩"
+        />
+        <HighlightTitle path="#" text="ইউনিয়নের বাজেট ২০২৩-২০২৪" />
+        <HighlightTitle
+          path="#"
+          text="ইউনিয়নের ২০২৩-২০২৪ অর্থবছরের উন্নয়ন কাজের তালিকা"
+        />
+      </div>
+      {/* পরিষদ সম্পর্কে */}
+      <HomeParishadAbout />
+      {/* ইউনিয়নের নোটিশ */}
+      <HomeNotice />
+      {/* ইউনিয়নের নিয়োগ বিজ্ঞপ্তি */}
+      <div className="mt-6">
+        <HighlightTitle
+          text="নিয়োগ বিজ্ঞপ্তি"
+          path="#"
+          h3Class="mb-5"
+          linkClass="text-xl font-bold"
+        />
+        <Table>
+          <TRow>
+            <THeading>বিষয়বস্তু</THeading>
+            <THeading>প্রকাশের তারিখ</THeading>
+            <THeading>ডাউনলোড</THeading>
+          </TRow>
+          <TRow>
+            <TData>ইউনিয়নের পানি শাখায় বিভিন্ন পদে নিয়োগ বিজ্ঞপ্তি</TData>
+            <TData>০৮-০৬-২০২৩</TData>
+            <TData>
+              <PdfDownload
+                file={circular}
+                fileName="Circular"
+                icon={<FaRegFilePdf />}
               />
-              <div className="absolute w-full h-full top-0 left-0 bottom-0 right-0 bg-[rgba(0,0,0,.5)]">
-                <h3 className="absolute bottom-[30%] left-1/2 -translate-x-1/2 text-white font-bold w-[80%] text-center text-xl">
-                  {item.title}
-                </h3>
-                <p className="absolute bottom-[10%] left-1/2 -translate-x-1/2 text-sm text-white w-full text-center px-3">
-                  {item.description}
-                </p>
-              </div>
-            </Slide>
-          ))}
-        </CarouselContainer> */}
-      </Carousel>
+            </TData>
+          </TRow>
+        </Table>
+      </div>
+      {/* সেবাসমুহ */}
+      <div className="mt-8 border-b-2 border-primary-color">
+        <HighlightTitle
+          text="সেবাসমূহ"
+          path="#"
+          linkClass="text-xl font-bold"
+          h3Class="max-w-max"
+        />
+      </div>
+      {/* card */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 items-center justify-center gap-x-5 gap-y-7 mt-6">
+        {SHEBA.map((item) => (
+          <ShebaCard key={item.id} data={item} />
+        ))}
+      </div>
     </>
   );
 };
@@ -98,15 +181,15 @@ const HomePage = () => {
       {/* Home Layout */}
       <div className="grid grid-cols-12 bg-slate-100 mt-8">
         {/* left sidebar */}
-        <aside className="col-span-12 order-2 lg:order-1 lg:col-span-3 border border-green-400">
+        <aside className="col-span-12 order-2 lg:order-1 lg:col-span-3">
           <h3>Left Sidebar</h3>
         </aside>
         {/* Main Content */}
-        <div className="col-span-12 order-1 lg:order-2 lg:col-span-6 border border-yellow-400">
+        <div className="col-span-12 order-1 lg:order-2 lg:col-span-6 pb-8 max-w-screen-md mx-auto">
           <HomeMainContent />
         </div>
         {/* Right Sidebar */}
-        <aside className="order-3 lg:order-3 col-span-12 lg:col-span-3 border border-indigo-500">
+        <aside className="order-3 lg:order-3 col-span-12 lg:col-span-3 ">
           <h3>Right Sidebar</h3>
         </aside>
       </div>
