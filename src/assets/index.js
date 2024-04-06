@@ -17,9 +17,24 @@ import sheba11 from "./sheba-11.jpg";
 import sheba12 from "./sheba-12.jpg";
 import sheba13 from "./sheba-13.jpg";
 import sheba14 from "./sheba-14.jpg";
-
-
-
+import awerness from "./awerness.jpeg";
+import chairman from "./chairman.jpg";
+import counselor1 from "./counselor-1.jpg";
+import counselor2 from "./counselor-2.jpg";
+import counselor3 from "./counselor-3.jpg";
+import counselor4 from "./counselor-4.jpg";
+import counselor5 from "./counselor-5.jpg";
+import counselor6 from "./counselor-6.jpg";
+import counselor7 from "./counselor-7.jpg";
+import counselor8 from "./counselor-8.jpg";
+import counselor9 from "./counselor-9.jpg";
+import asonCounselor1 from "./ason-counselor1.jpg";
+import asonCounselor2 from "./ason-counselor2.jpg";
+import asonCounselor3 from "./ason-counselor3.jpg";
+import hotline999 from './999-hotline.png';
+import hotline106 from './106-hotline.png';
+import hotline333 from './333-hotline.png';
+import hotline1090 from './1090-hotline.png';
 
 export {
   logo,
@@ -41,4 +56,22 @@ export {
   sheba12,
   sheba13,
   sheba14,
+  awerness,
+  chairman,
+  counselor1,
+  counselor2,
+  counselor3,
+  counselor4,
+  counselor5,
+  counselor6,
+  counselor7,
+  counselor8,
+  counselor9,
+  asonCounselor1,
+  asonCounselor2,
+  asonCounselor3,
+  hotline106,
+  hotline1090,
+  hotline333,
+  hotline999
 };
