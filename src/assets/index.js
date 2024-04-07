@@ -35,6 +35,10 @@ import hotline999 from './999-hotline.png';
 import hotline106 from './106-hotline.png';
 import hotline333 from './333-hotline.png';
 import hotline1090 from './1090-hotline.png';
+import latestDay from './latest.jpg';
+import digitalBangladesh from './Digital_bangladesh.jpg';
+import dengue from './dengue.jpg';
+import footerTopImage from './Footer_Image.png';
 
 export {
   logo,
@@ -73,5 +77,9 @@ export {
   hotline106,
   hotline1090,
   hotline333,
-  hotline999
+  hotline999,
+  latestDay,
+  digitalBangladesh,
+  dengue,
+  footerTopImage
 };

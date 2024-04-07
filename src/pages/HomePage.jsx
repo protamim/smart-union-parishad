@@ -1,4 +1,3 @@
-import Marquee from "react-fast-marquee";
 import {
   asonCounselor1,
   asonCounselor2,
@@ -14,6 +13,8 @@ import {
   counselor7,
   counselor8,
   counselor9,
+  dengue,
+  digitalBangladesh,
   homeSlider1,
   homeSlider2,
   homeSlider3,
@@ -21,6 +22,7 @@ import {
   hotline1090,
   hotline333,
   hotline999,
+  latestDay,
   sheba1,
   sheba10,
   sheba11,
@@ -42,50 +44,16 @@ import HomeNotice from "../components/ui/HomeNotice";
 import HomeParishadAbout from "../components/ui/HomeParishadAbout";
 import Table, { TData, THeading, TRow } from "../components/ui/Table";
 import PdfDownload from "../components/ui/PdfDownload";
-import { birthReg, circular } from "../../public";
+import { application_form, birthReg, circular } from "../../public";
 import { FaRegFilePdf } from "react-icons/fa";
 import ShebaCard from "../components/ui/ShebaCard";
 import { Card, CardHeader, CardBody, CardFooter } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import CounselorCard from "../components/ui/CounselorCard";
 import SmartLink from "../components/ui/SmartLink";
-
-const Welcome = () => {
-  return (
-    <>
-      <div className="bg-slate-300 h-14 relative mt-3 flex items-center overflow-hidden">
-        <h4 className="bg-primary-color max-w-max absolute left-0 top-0 h-full flex items-center pl-2 pr-6 text-white font-medium">
-          স্বাগতম
-        </h4>
-        {/* text slider */}
-        <div className="ml-[90px]">
-          <Marquee autoFill={true} pauseOnHover={true}>
-            <p className="text-sm text-black mr-5">
-              আপনার ইউনিয়ন কর নিয়মিত পরিশোধ করুন।
-            </p>
-            <p className="text-sm text-black mr-5">মাদক মুক্ত সমাজ গঠন করুন।</p>
-            <p className="text-sm text-black mr-5">
-              যে কোন স্থাপনা নির্মাণের জন্য ইউনিয়নের অনুমোদন গ্রহন করুন এবং
-              পরিকল্পিত নগরায়ণে সহায়তা করুন।
-            </p>
-            <p className="text-sm text-black mr-5">
-              আবর্জনা সঠিক স্থানে ফেলুন।
-            </p>
-            <p className="text-sm text-black mr-5">
-              আপনার সন্তানের জন্ম নিবন্ধন সম্পন্ন কর।
-            </p>
-            <p className="text-sm text-black mr-5">
-              সময়মতো পানির বিল পরিশোধ করুন।
-            </p>
-            <p className="text-sm text-black mr-5">
-              আপনার ইউনিয়নকে পরিচ্ছন্ন রাখুন।
-            </p>
-          </Marquee>
-        </div>
-      </div>
-    </>
-  );
-};
+import { Marquee } from "@devnomic/marquee";
+import "@devnomic/marquee/dist/index.css";
+import WelcomeHome from "../components/ui/WelcomHome";
 
 const HomeCarouselData = [
   {
@@ -150,7 +118,11 @@ const ABENDONPOTRO = [
   { id: 1, title: "জন্ম নিবন্ধন ফরম", path: `${birthReg}` },
   { id: 2, title: "মৃত্যু নিবন্ধন ফরম", path: `${birthReg}` },
   { id: 3, title: "মৃত্যু সনদ ফরম", path: `${birthReg}` },
-  { id: 4, title: "জন্ম/মৃত্যু সনদ বাতিল/সংশোধনের আবেদনপত্র", path: `${birthReg}` },
+  {
+    id: 4,
+    title: "জন্ম/মৃত্যু সনদ বাতিল/সংশোধনের আবেদনপত্র",
+    path: `${birthReg}`,
+  },
   { id: 5, title: "বিদ্যুৎ প্রত্যয়ন ফরম", path: `${birthReg}` },
   { id: 6, title: "পরিবেশগত ছারপত্র ফরম", path: `${birthReg}` },
   { id: 7, title: "পরিবেশগত অনাপত্তি ফরম", path: `${birthReg}` },
@@ -162,6 +134,183 @@ const ABENDONPOTRO = [
   { id: 13, title: "প্রিমাইসিস লাইসেন্স ফরম", path: `${birthReg}` },
   { id: 14, title: "উত্তরাধিকার সনদ ফরম", path: `${birthReg}` },
   { id: 15, title: "ট্রেড লাইসেন্স অ্যাপ্লিকেশান ফরম", path: `${birthReg}` },
+];
+
+const IMPORTANT_LINKS = [
+  { id: 1, title: "রাষ্ট্রপতির কার্যালয়", path: `${birthReg}` },
+  { id: 2, title: "প্রধানমন্ত্রীর কার্যালয়", path: `${birthReg}` },
+  { id: 3, title: "মন্ত্রীপরিষদ বিভাগ", path: `${birthReg}` },
+  {
+    id: 4,
+    title: "বাংলাদেশ জাতীয় তথ্য বাতায়ন",
+    path: `${birthReg}`,
+  },
+  { id: 5, title: "জনপ্রশাসন মন্ত্রণালয়", path: `${birthReg}` },
+  {
+    id: 6,
+    title: "বার্ষিক কর্মসম্পাদন চুক্তি (এপিএ) - মন্ত্রিপরিষদ বিভাগ",
+    path: `${birthReg}`,
+  },
+  { id: 7, title: "কর্মী পরিচলন তথ্য সিস্টেম", path: `${birthReg}` },
+  { id: 8, title: "জন্ম নিবন্ধন যাচাই", path: `${birthReg}` },
+  { id: 9, title: "ইউনিয়নের ওয়েব-পোর্টাল", path: `${birthReg}` },
+];
+
+const E_SHEBA = [
+  { id: 1, title: "Birth and Death Registration", path: `${birthReg}` },
+  { id: 2, title: "Online Invoice Verification", path: `${birthReg}` },
+  { id: 3, title: "Verify Visa", path: `${birthReg}` },
+  {
+    id: 4,
+    title: "e-Tax Payment",
+    path: `${birthReg}`,
+  },
+  {
+    id: 5,
+    title: "Updating national identity card information",
+    path: `${birthReg}`,
+  },
+];
+
+const UPDATED_NOTICE = [
+  {
+    id: 1,
+    title: "চাকুরির আবেদন ফরম",
+    date: "১১-০২-২০২৪",
+    path: `${application_form}`,
+  },
+  {
+    id: 2,
+    title:
+      "আরবান প্রাইমারী হেলথ কেয়ার ডেলিভারী প্রজেক্ট ২য় পর্যায় এর নিয়োগ বিজ্ঞপ্তি",
+    date: "১১-০২-২০২৪",
+    path: `${application_form}`,
+  },
+  {
+    id: 3,
+    title: "তারাব পৌরসভায় পানি শাখায় পুনঃ নিয়োগ বিজ্ঞপ্তি",
+    date: "১৮-১০-২০২৩",
+    path: `${application_form}`,
+  },
+  {
+    id: 4,
+    title:
+      "জনাব জেড. এম. আনোয়ার, নির্বাহী প্রকৌশলী, তারাব পৌরসভা এর আন্তর্জাতিক পাসপোর্ট নবায়ন প্রসঙ্গে",
+    date: "১৬-০৮-২০২৩",
+    path: `${application_form}`,
+  },
+  {
+    id: 5,
+    title: "নাবিলা অপসরা এর পাসপোর্ট নবায়নের অনাপত্তি প্রদান প্রসঙ্গে",
+    date: "২৫-০৬-২০২৩",
+    path: `${application_form}`,
+  },
+  {
+    id: 6,
+    title: "ফাতেমা ইসলাম এর পাসপোর্ট নবায়নের অনাপত্তি প্রদান প্রসঙ্গে",
+    date: "২৫-০৬-২০২৩",
+    path: `${application_form}`,
+  },
+  {
+    id: 7,
+    title: "শহর সমন্বয় কমিটি (টিএলসিসি)'র সভা আহবান প্রসঙ্গে",
+    date: "১৫-০৬-২০২৩",
+    path: `${application_form}`,
+  },
+  {
+    id: 8,
+    title: "তারাব পৌরসভায় পানি শাখায় বিভিন্ন পদে নিয়োগ বিজ্ঞপ্তি",
+    date: "০৮-০৬-২০২৩",
+    path: `${application_form}`,
+  },
+  {
+    id: 9,
+    title: "শহর সমন্বয় কমিটি সভার কার্যবিবরনী ১৩ নভেম্বর",
+    date: "১৩-১১-২২",
+    path: `${application_form}`,
+  },
+  {
+    id: 10,
+    title: "শহর সমন্বয় কমিটি সভায় অংশগ্রহন সম্পর্কিত নোটিশ ০৭ নভেম্বর",
+    date: "০৭-১১-২২",
+    path: `${application_form}`,
+  },
+  {
+    id: 11,
+    title: "শহর সমন্বয় কমিটি সভার কার্যবিবরনী ২৫ সেপ্টেম্বর",
+    date: "২৫-০৯-২২",
+    path: `${application_form}`,
+  },
+  {
+    id: 12,
+    title: "শহর সমন্বয় কমিটি সভায় অংশগ্রহন সম্পর্কিত নোটিশ ১৯ সেপ্টেম্বর",
+    date: "১৯-০৯-২২",
+    path: `${application_form}`,
+  },
+  {
+    id: 13,
+    title:
+      "জনাব মোঃ নাজমুল ইসলাম, উপ-সহকারী প্রকৌশলী (বিদ্যুৎ) এর বহিঃ বাংলাদেশ সফরের আদেশ",
+    date: "১৪-০৯-২২",
+    path: `${application_form}`,
+  },
+  {
+    id: 14,
+    title: "তারাব পৌরসভায় বিভিন্ন পদে নিয়োগ বিজ্ঞপ্তি",
+    date: "২২-০২-২০২২",
+    path: `${application_form}`,
+  },
+  {
+    id: 15,
+    title:
+      "Job Advertisement for 'Field Supervisor' of GOB-UNICEF supported WASH project of Tarabo Municipality",
+    date: "১৬-০২-২০২২",
+    path: `${application_form}`,
+  },
+  {
+    id: 16,
+    title: "তারাব পৌরসভার পুনঃ নিয়োগ বিজ্ঞপ্তি",
+    date: "২৭-০৮-২০২০",
+    path: `${application_form}`,
+  },
+  {
+    id: 17,
+    title: "তারাব পৌরসভার নিয়োগ বিজ্ঞপ্তি",
+    date: "২৭-০৮-২০২০",
+    path: `${application_form}`,
+  },
+  {
+    id: 18,
+    title:
+      "জনাব মোঃ নজরুল ইসলাম এর আন্তর্জাতিক পাসপোর্ট নবায়ন এর অনাপত্তি পত্র",
+    date: "১৬-০২-২০২০",
+    path: `${application_form}`,
+  },
+  {
+    id: 19,
+    title: "তারাব পৌরসভার স্যানিটেশন সংক্রান্ত নোটিশ",
+    date: "২৩-১২-২০১৯",
+    path: `${application_form}`,
+  },
+  {
+    id: 20,
+    title:
+      "পৌরসভার সকল নাগরিক সুবিধা অনলাইনে পেতে Digital Paurashava.gov.bd তে নিবন্ধন করুন.",
+    date: "০৬-১২-২০১৯",
+    path: `${application_form}`,
+  },
+  {
+    id: 21,
+    title: "তারাব পৌরসভায় স্মার্ট জাতীয় পরিচয়পত্র বিতরন সময়সূচীসূচী",
+    date: "২৭-১১-২০১৯",
+    path: `${application_form}`,
+  },
+  {
+    id: 22,
+    title: "পৌরসভার সকল নাগরিক সুবিধার খরচাদি",
+    date: "২৭-১১-২০১৯",
+    path: `${application_form}`,
+  },
 ];
 
 const HomeMainContent = () => {
@@ -346,7 +495,7 @@ const HomeLeftSide = () => {
 
         {/* জরুরি হটলাইন */}
         <div className="mb-8">
-        <div className="mb-5">
+          <div className="mb-5">
             <HighlightTitle
               text="জরুরি হটলাইন"
               path="#"
@@ -355,22 +504,140 @@ const HomeLeftSide = () => {
           </div>
           {/* hotlines */}
           <div className="grid grid-cols-2 items-center gap-x-5 gap-y-8">
-            <span  className="mx-auto">
-              <img src={hotline106} alt="106 hotline" className="max-w-[150px] w-full" />
+            <span className="mx-auto">
+              <img
+                src={hotline106}
+                alt="106 hotline"
+                className="max-w-[150px] w-full"
+              />
             </span>
-            <span className="mx-auto"> 
-              <img src={hotline1090} alt="1090 hotline" className="max-w-[150px] w-full" />
+            <span className="mx-auto">
+              <img
+                src={hotline1090}
+                alt="1090 hotline"
+                className="max-w-[150px] w-full"
+              />
             </span>
-            <span  className="mx-auto">
-              <img src={hotline333} alt="333 hotline" className="max-w-[150px] w-full" />
+            <span className="mx-auto">
+              <img
+                src={hotline333}
+                alt="333 hotline"
+                className="max-w-[150px] w-full"
+              />
             </span>
-            <span  className="mx-auto">
-              <img src={hotline999} alt="999 hotline" className="max-w-[150px] w-full" />
+            <span className="mx-auto">
+              <img
+                src={hotline999}
+                alt="999 hotline"
+                className="max-w-[150px] w-full"
+              />
             </span>
           </div>
         </div>
+      </div>
+    </>
+  );
+};
 
-
+const HomeRightSide = () => {
+  return (
+    <>
+      <div>
+        {/* Latest Day */}
+        <div className="mb-1">
+          <img src={latestDay} alt="laetst news in BD" className="w-full" />
+        </div>
+        {/* আপডেট নোটিশ */}
+        <div className="mb-8">
+          <div className="mb-5">
+            <HighlightTitle
+              text="আপডেট নোটিশ"
+              path="#"
+              linkClass="font-bold text-xl"
+            />
+          </div>
+          {/* নোটিশ */}
+          <div className="overflow-hidden border border-secondary-color h-[15rem] p-2">
+            <Marquee direction="up" pauseOnHover={true}>
+              {UPDATED_NOTICE.map((item) => (
+                <a
+                  href={item.path}
+                  key={item.id}
+                  className="border p-1 bg-pink-100 transition-all ease-in-out duration-300 hover:text-primary-color"
+                >
+                  <p className="mb-2">{item.title}</p>
+                  <span>{item.date}</span>
+                </a>
+              ))}
+            </Marquee>
+          </div>
+        </div>
+        {/* গুরুত্বপূর্ণ লিঙ্ক */}
+        <div className="mb-8">
+          <div className="mb-5">
+            <HighlightTitle
+              text="গুরুত্বপূর্ণ লিঙ্ক"
+              path="#"
+              linkClass="font-bold text-xl"
+            />
+          </div>
+          {/* links */}
+          <div className="flex items-start flex-col divide-y-[1px] divide-secondary-color">
+            {IMPORTANT_LINKS.map((item) => (
+              <SmartLink key={item.id} data={item} />
+            ))}
+          </div>
+        </div>
+        {/* কেন্দ্রীয় ই-সেবা */}
+        <div className="mb-8">
+          <div className="mb-5">
+            <HighlightTitle
+              text="কেন্দ্রীয় ই-সেবা"
+              path="#"
+              linkClass="font-bold text-xl"
+            />
+          </div>
+          {/* links */}
+          <div className="flex items-start flex-col divide-y-[1px] divide-secondary-color">
+            {E_SHEBA.map((item) => (
+              <SmartLink key={item.id} data={item} />
+            ))}
+          </div>
+        </div>
+        {/*  ডিজিটাল বাংলাদেশ দিবস ২০২৪  */}
+        <div className="mb-8">
+          <div className="mb-5">
+            <HighlightTitle
+              text="ডিজিটাল বাংলাদেশ দিবস ২০২৪"
+              path="#"
+              linkClass="font-bold text-xl"
+            />
+          </div>
+          {/* links */}
+          <div>
+            <img
+              src={digitalBangladesh}
+              alt="digital Bangladesh"
+              className="w-full"
+            />
+          </div>
+        </div>
+        {/*  ডেঙ্গু প্রতিরোধে করণীয় */}
+        <div className="mb-8">
+          <div className="mb-5">
+            <HighlightTitle
+              text="ডেঙ্গু প্রতিরোধে করণীয়"
+              path="#"
+              linkClass="font-bold text-xl"
+            />
+          </div>
+          {/* links */}
+          <div>
+            <Link to="https://bangladesh.gov.bd/site/page/91530698-c795-4542-88f2-5da1870bd50c" target="_blank">
+              <img src={dengue} alt="Dengue Bangladesh" className="w-full" />
+            </Link>
+          </div>
+        </div>
       </div>
     </>
   );
@@ -379,7 +646,7 @@ const HomeLeftSide = () => {
 const HomePage = () => {
   return (
     <>
-      <Welcome />
+      <WelcomeHome />
       {/* Home Layout */}
       <div className="grid grid-cols-12 bg-slate-100 mt-8 gap-y-10">
         {/* left sidebar */}
@@ -392,7 +659,7 @@ const HomePage = () => {
         </div>
         {/* Right Sidebar */}
         <aside className="order-3 lg:order-3 col-span-12 lg:col-span-3 px-3">
-          <h3>Right Sidebar</h3>
+          <HomeRightSide />
         </aside>
       </div>
     </>
