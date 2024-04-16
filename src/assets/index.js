@@ -39,6 +39,13 @@ import latestDay from './latest.jpg';
 import digitalBangladesh from './Digital_bangladesh.jpg';
 import dengue from './dengue.jpg';
 import footerTopImage from './Footer_Image.png';
+import bKashLogo from "./bKash-logo.png";
+import rocketLogo from "./rocket-logo.png";
+import nagadLogo from "./nagad-logo.png";
+import masterCardLogo from "./master-card-logo.webp";
+import pubaliBankLogo from "./pubali-bank-logo.png";
+import upayLogo from "./upay-logo.png";
+import visaCardLogo from "./Visa_Logo.png";
 
 export {
   logo,
@@ -81,5 +88,12 @@ export {
   latestDay,
   digitalBangladesh,
   dengue,
-  footerTopImage
+  footerTopImage,
+  bKashLogo,
+  pubaliBankLogo,
+  rocketLogo,
+  nagadLogo,
+  upayLogo,
+  masterCardLogo,
+  visaCardLogo
 };
