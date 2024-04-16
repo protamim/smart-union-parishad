@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Card, CardHeader, CardBody } from "@chakra-ui/react";
 
 const CounselorCard = ({data = {}}) => {
-    const { id, name, image } = data;
+    const { name, image } = data;
   return (
     <>
       <Link title={name || ''}>

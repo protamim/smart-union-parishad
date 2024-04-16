@@ -54,6 +54,7 @@ import SmartLink from "../components/ui/SmartLink";
 import { Marquee } from "@devnomic/marquee";
 import "@devnomic/marquee/dist/index.css";
 import WelcomeHome from "../components/ui/WelcomHome";
+import Counselors from "../components/ui/Counselors";
 
 const HomeCarouselData = [
   {
@@ -97,21 +98,21 @@ const SHEBA = [
 ];
 
 const COUNSELORS = [
-  { id: 1, image: `${counselor1}`, name: "রফিকুল ইসলাম" },
-  { id: 2, image: `${counselor2}`, name: "মোঃ জসীম উদ্দীন ভূইয়া" },
-  { id: 3, image: `${counselor3}`, name: "রাসেল সিকদার" },
-  { id: 4, image: `${counselor4}`, name: "মোঃ আক্তার হোসেন" },
-  { id: 5, image: `${counselor5}`, name: "মোঃ হামিদুল্লাহ" },
-  { id: 6, image: `${counselor6}`, name: "মোঃ মাহবুবুর রহমান" },
-  { id: 7, image: `${counselor7}`, name: "আনোয়ার হোসেন" },
-  { id: 8, image: `${counselor8}`, name: "আমির হোসেন ভুঁইয়া" },
-  { id: 9, image: `${counselor9}`, name: "আতিকুর রহমান" },
+  { id: 1, image: `${counselor1}`, name: "রফিকুল ইসলাম", word: 3, mobile: '01718908020' },
+  { id: 2, image: `${counselor2}`, name: "মোঃ জসীম উদ্দীন ভূইয়া", word: 4, mobile: '01871908236' },
+  { id: 3, image: `${counselor3}`, name: "রাসেল সিকদার", word: 8, mobile: '01414842030' },
+  { id: 4, image: `${counselor4}`, name: "মোঃ আক্তার হোসেন", word: 1, mobile: '01618206030' },
+  { id: 5, image: `${counselor5}`, name: "মোঃ হামিদুল্লাহ", word: 2, mobile: '01915728731' },
+  { id: 6, image: `${counselor6}`, name: "মোঃ মাহবুবুর রহমান", word: 9, mobile: '01354896387' },
+  { id: 7, image: `${counselor7}`, name: "আনোয়ার হোসেন", word: 7, mobile: '01545987230' },
+  { id: 8, image: `${counselor8}`, name: "আমির হোসেন ভুঁইয়া" , word: 5, mobile: '01817918032'},
+  { id: 9, image: `${counselor9}`, name: "আতিকুর রহমান", word: 6, mobile: '01785692361' },
 ];
 
 const ASON_COUNSELORS = [
-  { id: 1, image: `${asonCounselor1}`, name: "মিসেস লায়লা পারভিন" },
-  { id: 2, image: `${asonCounselor2}`, name: "মোসাঃ মাহফুজা বেগম" },
-  { id: 3, image: `${asonCounselor3}`, name: "মিসেস জোসনা বেগম" },
+  { id: 1, image: `${asonCounselor1}`, name: "মিসেস লায়লা পারভিন", word: 3, mobile: '01818235184' },
+  { id: 2, image: `${asonCounselor2}`, name: "মোসাঃ মাহফুজা বেগম", word: 2, mobile: '01458625878' },
+  { id: 3, image: `${asonCounselor3}`, name: "মিসেস জোসনা বেগম", word: 6, mobile: '01512368967' },
 ];
 
 const ABENDONPOTRO = [
@@ -435,27 +436,8 @@ const HomeLeftSide = () => {
               linkClass="text-xl font-bold"
             />
           </div>
-          <div>
-            <div className="grid grid-cols-3 lg:grid-cols-2 gap-x-3 gap-y-6">
-              {COUNSELORS.map((item) => (
-                <Link key={item.id} title={item.name}>
-                  <Card className="h-full group overflow-hidden">
-                    <CardHeader className="!p-2">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="w-full max-w-full transition-all ease-in-out duration-300 group-hover:scale-110"
-                      />
-                    </CardHeader>
-                    <CardBody className="!p-2">
-                      <h5 className="text-black text-xs transition-all ease-in-out duration-300 group-hover:text-primary-color group-hover:font-medium">
-                        {item.name}
-                      </h5>
-                    </CardBody>
-                  </Card>
-                </Link>
-              ))}
-            </div>
+          <div className="grid grid-cols-3 lg:grid-cols-2 gap-x-3 gap-y-6">
+            <Counselors data={COUNSELORS} />
           </div>
         </div>
 
@@ -470,9 +452,7 @@ const HomeLeftSide = () => {
           </div>
           {/* Card */}
           <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-2">
-            {ASON_COUNSELORS.map((item) => (
-              <CounselorCard data={item} key={item.id} />
-            ))}
+            <Counselors data={ASON_COUNSELORS} />
           </div>
         </div>
 
@@ -633,7 +613,10 @@ const HomeRightSide = () => {
           </div>
           {/* links */}
           <div>
-            <Link to="https://bangladesh.gov.bd/site/page/91530698-c795-4542-88f2-5da1870bd50c" target="_blank">
+            <Link
+              to="https://bangladesh.gov.bd/site/page/91530698-c795-4542-88f2-5da1870bd50c"
+              target="_blank"
+            >
               <img src={dengue} alt="Dengue Bangladesh" className="w-full" />
             </Link>
           </div>
